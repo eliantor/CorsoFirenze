@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_output"
+        android:textSize="@dimen/text_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ciao"/>
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lista"
+        android:id="@+id/start_list"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dynamic"
+        android:id="@+id/start_dynamic"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="2dp"
+
+        android:background="#000"/>
+    <include layout="@layout/edit_layout"/>
+
+</LinearLayout>

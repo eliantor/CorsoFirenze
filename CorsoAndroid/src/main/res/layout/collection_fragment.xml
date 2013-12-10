@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rg_select">
+    <ViewSwitcher
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/first_view"
+                android:text="CIAO"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/second_view"
+                android:text="CIAO!!!"/>
+    </ViewSwitcher>
+    <ViewStub
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/input_fragment"
+            android:id="@+id/view_stub"
+            android:inflatedId="@+id/inflated_view_stub"/>
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/select_first"
+        android:text="First"/>
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/select_second"
+        android:text="Second"/>
+</RadioGroup>

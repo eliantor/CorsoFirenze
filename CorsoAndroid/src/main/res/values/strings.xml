@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CorsoAndroid</string>
+    <string name="hello">Hello World!</string>
+    <string name="ciao">Ciao</string>
+    <string name="alternate">Alternate Text</string>
+    <string name="change">Change!</string>
+    <string name="submit">Submit</string>
+    <string name="title_activity_dynamic_fargment">DynamicFargmentActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_tabs">TabsActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+</resources>

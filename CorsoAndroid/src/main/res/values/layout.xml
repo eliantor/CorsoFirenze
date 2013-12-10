@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <bool name="is_tablet">false</bool>
+    <item name="collection_activity"
+        type="layout">@layout/_collection_activity_phone</item>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.aktor.course.droid"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:name="me.aktor.course.droid.MyApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="me.aktor.course.droid.MainActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name" >
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name="me.aktor.course.droid.EditActivity" />
+        <activity android:name="me.aktor.course.droid.lists.ListActivity" />
+        <activity
+            android:name="me.aktor.course.droid.dynamic.fragment.DynamicFargmentActivity"
+            android:label="@string/title_activity_dynamic_fargment" >
+        </activity>
+        <activity android:name="me.aktor.course.droid.tablet.sample.CollectionActivity" >
+        </activity>
+        <activity android:name="me.aktor.course.droid.tablet.sample.DetailActivity" />
+
+        <activity android:name="me.aktor.course.droid.concurrency.ConcurrentActivity" >
+
+        </activity>
+        <activity
+            android:name="me.aktor.course.droid.tabs.TabsActivity"
+            android:label="@string/title_activity_tabs" >
+        </activity>
+
+
+        <activity android:name=".notes.NotesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <provider
+            android:name="me.aktor.course.droid.database.NotesProvider"
+            android:authorities="me.aktor.course.droid.notes"
+            android:enabled="true"
+            android:exported="false" >
+        </provider>
+    </application>
+
+</manifest>
