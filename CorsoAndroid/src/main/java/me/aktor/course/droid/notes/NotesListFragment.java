@@ -56,7 +56,6 @@ public class NotesListFragment extends Fragment {
         @Override
         public Loader<Cursor> onCreateLoader(int id, Bundle bundle) {
             if (id == LOADER_ID){
-
               return  new CursorLoader(getActivity(), NotesContract.Note.CONTENT_URI,null,null,null,null);
             } else {
                 throw new RuntimeException("Wrong id");
@@ -88,16 +87,6 @@ public class NotesListFragment extends Fragment {
             super(context, null, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
             mInflater = LayoutInflater.from(context);
         }
-
-//        @Override
-//        public View getView(int position, View convertView, ViewGroup parent) {
-//            moveCursorToPosition(position);
-//            if (convertView == null){
-//                convertView = istanziaVienewView();
-//            }
-//            bindView();
-//            return convertView;
-//        }
 
         @Override
         public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {

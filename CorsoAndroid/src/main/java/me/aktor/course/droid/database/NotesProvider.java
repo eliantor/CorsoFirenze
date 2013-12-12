@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
 import me.aktor.course.droid.NotesContract;
+import me.aktor.course.droid.services2.SimpleService;
 
 public class NotesProvider extends ContentProvider {
 
@@ -77,12 +78,14 @@ public class NotesProvider extends ContentProvider {
             default:
                 throw new UnsupportedOperationException("uri not supported "+uri);
         }
+
         sqb.setTables(tables);
 
         SQLiteDatabase db = mDBHelper.getReadableDatabase();
 
         Cursor cursor =sqb.query(db,projection,selection,selectionArgs,sortOrder,/*group by*/null,/*having*/null);
         if(cursor!=null)cursor.setNotificationUri(getContext().getContentResolver(),uri);
+        SimpleService.startSimpleService(getContext(),"QUERY EXECUTED");
         return cursor;
     }
 

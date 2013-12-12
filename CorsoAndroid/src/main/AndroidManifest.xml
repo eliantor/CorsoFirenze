@@ -36,29 +36,59 @@
         <activity android:name="me.aktor.course.droid.tablet.sample.CollectionActivity" >
         </activity>
         <activity android:name="me.aktor.course.droid.tablet.sample.DetailActivity" />
-
         <activity android:name="me.aktor.course.droid.concurrency.ConcurrentActivity" >
-
         </activity>
         <activity
             android:name="me.aktor.course.droid.tabs.TabsActivity"
             android:label="@string/title_activity_tabs" >
         </activity>
+        <activity android:name="me.aktor.course.droid.notes.NotesActivity" >
 
-
-        <activity android:name=".notes.NotesActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <provider
             android:name="me.aktor.course.droid.database.NotesProvider"
             android:authorities="me.aktor.course.droid.notes"
             android:enabled="true"
             android:exported="false" >
         </provider>
+
+        <activity android:name=".handlers.HandlerActivity">
+        </activity>
+
+        <activity android:name=".services.FirstBoundActivity">
+
+        </activity>
+        <activity android:name=".services.SecondActivity">
+
+        </activity>
+        <service
+            android:name="me.aktor.course.droid.services.MyIntentService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+
+        <service android:name=".services2.SimpleService"
+            android:exported="false">
+
+        </service>
+        <service android:name=".services2.SimpleLongRunningService">
+
+        </service>
+
+
+        <activity android:name=".services2.ServiceControlActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <service android:name=".services2.SimpleLongRunningServiceFeedback">
+
+        </service>
     </application>
 
 </manifest>

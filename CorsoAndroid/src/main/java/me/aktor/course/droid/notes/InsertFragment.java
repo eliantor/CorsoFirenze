@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import me.aktor.course.droid.R;
+import me.aktor.course.droid.services2.SimpleLongRunningService;
 
 /**
  * Created by eto on 10/12/13.
@@ -34,6 +35,7 @@ public class InsertFragment extends Fragment {
         v.findViewById(R.id.btn_submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SimpleLongRunningService.startLongRunning(getActivity(),10000);
                 mOnNewNote.onNewNote(mTitleInput.getText().toString(),
                                      mContentInput.getText().toString());
             }

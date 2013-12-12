@@ -4,16 +4,19 @@ import android.app.Activity;
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import me.aktor.course.droid.NotesContract;
 import me.aktor.course.droid.concurrency.DelayedRandomGenerator;
+import me.aktor.course.droid.services2.SimpleService;
 
 /**
  * Created by eto on 04/12/13.
@@ -50,6 +53,7 @@ public class ConcurrentBridge extends Fragment implements DelayedRandomGenerator
     private OnMessageListener mMessageListener;
     private boolean mReady;
     private List<String> mPending;
+    private Context mGlobalContext;
 
 
     public  static interface OnMessageListener{
@@ -82,6 +86,7 @@ public class ConcurrentBridge extends Fragment implements DelayedRandomGenerator
         mQueryHandler = new NotesQueryHandler(this);
 
         mPending = new ArrayList<String>();
+        mGlobalContext = getActivity().getApplicationContext();
     }
 
     @Override
@@ -121,9 +126,12 @@ public class ConcurrentBridge extends Fragment implements DelayedRandomGenerator
     private void handleInsertComplete(Uri uri) {
         if (mReady){
             mMessageListener.onMessageReceived(uri.toString());
+
         } else {
             mPending.add(uri.toString());
         }
+        SimpleService.startSimpleService(mGlobalContext,"Inserted text is "+uri.toString());
+
     }
 
     @Override
