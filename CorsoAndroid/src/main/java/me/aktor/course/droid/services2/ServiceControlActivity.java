@@ -63,6 +63,7 @@ public class ServiceControlActivity extends FragmentActivity
     protected void onResume() {
         super.onResume();
         mReceiver.setReceiver(this);
+
         LocalBroadcastManager bm = LocalBroadcastManager.getInstance(this);
         mStation = new Station();
         bm.registerReceiver(mStation,ADDRESS);
@@ -72,6 +73,7 @@ public class ServiceControlActivity extends FragmentActivity
     protected void onPause() {
         super.onPause();
         mReceiver.setReceiver(null);
+
         LocalBroadcastManager bm = LocalBroadcastManager.getInstance(this);
         bm.unregisterReceiver(mStation);
         mStation = null;
